@@ -109,5 +109,35 @@ function editUser($user){
         echo $con->error;
     }
 }
+function uploadFile($name){
+    $con=$GLOBALS['con'];
+    $sql="insert into profile values (null,?)";
+    $st=$con->prepare($sql);
+    $st->bind_param("s",$name);
+      if($st->execute()){
+         //header("location:welcome.php?n=$name");
+         return true;
+      }
+      else{
+          return false;
+          //echo  $con->error;
+      }
+}
 
+
+function getFiles(){
+    $con=$GLOBALS['con'];
+    $sql="select * from profile";
+    $result=$con->query($sql);
+    $img=array();
+    if($result->num_rows>0){
+        while($row=$result->fetch_assoc()){
+            $img[]=$row;
+        }
+    }
+//    echo "<pre>";
+//    print_r($users);
+//    echo "</pre>";
+    return  $img;
+}
 ?>

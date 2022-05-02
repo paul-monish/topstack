@@ -1,12 +1,20 @@
 
 <?php include 'fact.php';
+
 session_start();
 $n=$_SESSION['n'];
+
+$f=getIMG();
+// echo "<pre>";
+// print_r($f);
+// echo "</pre>";
+
+
 //echo $n;
-if(empty($n)){
-    header("location:login.php");
-}
-else{
+//if(empty($n)){
+    //header("location:login.php");
+//}
+//else{
 ?>
 <!doctype html>
 <html>
@@ -17,7 +25,9 @@ else{
     </head>
     <body>
         welcome <?=$_SESSION['n']?>
-
+        <?php foreach ($f as $i){?>
+        <img src="upload/<?=$i['name']?>" height="200" width="200">
+            <?php } ?>
         <br>
         <table border="1px">
             <tr>
@@ -46,6 +56,6 @@ else{
     </body>
 </html>
 <?php 
-}
-session_destroy();
+//}
+//session_destroy();
 ?>

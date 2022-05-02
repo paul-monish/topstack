@@ -4,13 +4,14 @@
         <title>web1</title>
     </head>
     <body>
-        <form action="fact.php" method="post">
-            NAME:<input type="text" name="name">
+        <form action="fact.php" method="post" enctype="multipart/form-data">
+            <!-- NAME:<input type="text" name="name">
             <br>
             E-MAIL:<input type="email" name="email">
             <br>
-            PASSWORD:<input type="password" name="pass">
+            PASSWORD:<input type="password" name="pass"> -->
             <br>
+            PROFILE:<input type="file" name="profile">
             <!-- Ph. NO.:<input type="number" name="name">
             <br>
             GENDER:
